@@ -8,3 +8,18 @@ class User:
     def __str__(self):
         return f"Name: {self.name}\nEmail: {self.email}\nAddress: {self.address}"
     
+# Pizza Class
+class Pizza:
+    def __init__(self, size, price, num_pizzas):
+        self.size = size
+        self.price = price
+        self.num_pizzas = num_pizzas
+
+    def total(self):
+        total_price = self.price * self.num_pizzas
+        if self.num_pizzas >= 3:
+            total_price *= 0.85  # 15% discount for 3 or more pizzas
+        return total_price
+
+    def __str__(self):
+        return f"Size: {self.size}\nPrice per pizza: ${self.price}\nNumber of pizzas: {self.num_pizzas}"
