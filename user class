@@ -23,3 +23,11 @@ class Pizza:
 
     def __str__(self):
         return f"Size: {self.size}\nPrice per pizza: ${self.price}\nNumber of pizzas: {self.num_pizzas}"
+# Main application
+def main():
+    # Get user details
+    name = input("Enter your name: ")
+    email = input("Enter your email: ")
+    address = input("Enter your address: ")
+
+    user = User(name, email, address)
