@@ -50,3 +50,12 @@ def main():
 
     pizza = Pizza(size, price, num_pizzas)
 
+# Display order details and total price
+    print("\nUser Information:")
+    print(user)
+
+    print("\nPizza Order:")
+    print(pizza)
+
+    total_price = pizza.total()
+    print(f"\nTotal Price: ${total_price}")
