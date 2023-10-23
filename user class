@@ -50,7 +50,7 @@ def main():
         print("Invalid pizza size. Please enter a valid size.")
         return
 
-    num_pizzas = int(input("How many pizzas of this size would you like to order?: "))
+    num_pizzas = int(input)("How many pizzas of this size would you like to order?: "))
 
     pizza = Pizza(size, price, num_pizzas)
 
