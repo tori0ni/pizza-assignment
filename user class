@@ -29,5 +29,24 @@ def main():
     name = input("Enter your name: ")
     email = input("Enter your email: ")
     address = input("Enter your address: ")
-
     user = User(name, email, address)
+
+# Get pizza order details
+    size = input("Enter pizza size (Small, Medium, Large, X-Large): ")
+    price = 0
+    if size == "Small":
+        price = 10
+    elif size == "Medium":
+        price = 12
+    elif size == "Large":
+        price = 15
+    elif size == "X-Large":
+        price = 18
+    else:
+        print("Invalid pizza size. Please enter a valid size.")
+        return
+
+    num_pizzas = int(input("Enter the number of pizzas: "))
+
+    pizza = Pizza(size, price, num_pizzas)
+
