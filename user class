@@ -26,27 +26,31 @@ class Pizza:
 # Main application
 def main():
     # Get user details
-    name = input("Enter your name: ")
-    email = input("Enter your email: ")
-    address = input("Enter your address: ")
+    name = input("What is your name?: ")
+    email = input("What is your email?: ")
+    address = input("What is your address?: ")
     user = User(name, email, address)
 
 # Get pizza order details
-    size = input("Enter pizza size (Small, Medium, Large, X-Large): ")
+    size = input("What pizza size would you like? (Small, Medium, Large, X-Large): ")
     price = 0
     if size == "Small":
         price = 10
+        print(f"A pizza of this size is ${price}")
     elif size == "Medium":
         price = 12
+        print(f"A pizza of this size is ${price}")
     elif size == "Large":
         price = 15
+        print(f"A pizza of this size is ${price}")
     elif size == "X-Large":
         price = 18
+        print(f"A pizza of this size is ${price}")
     else:
         print("Invalid pizza size. Please enter a valid size.")
         return
 
-    num_pizzas = int(input("Enter the number of pizzas: "))
+    num_pizzas = int(input("How many pizzas of this size would you like to order?: "))
 
     pizza = Pizza(size, price, num_pizzas)
 
@@ -59,6 +63,18 @@ def main():
 
     total_price = pizza.total()
     print(f"\nTotal Price: ${total_price}")
+
+# Print order summary
+    print(f'You have ordered {pizza.num_pizzas} {pizza.size} pizzas.')
+    if pizza.num_pizzas >= 3:
+        discount = 0.15  # 15% discount for orders of 3 or more pizzas
+        discounted_total = total_price * (1 - discount)
+        print(f'Your total after discount is ${discounted_total} (15% discount applied).')
+    else:
+        print(f'Your total is ${total_price}.')
+
+    print(f'Order will be delivered to {user.address}.')
+    print(f'Receipt will be emailed to {user.email}')
 
 if __name__ == "__main__":
     main()
